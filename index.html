@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>GD Wave Challenge</title>
+    <!-- Библиотека для автоматического создания скриншота профиля -->
+    <script src="https://cloudflare.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ГЛАВНОЕ МЕНЮ -->
+    <div id="main-menu" class="screen">
+        <div class="arrow-bg"></div> <!-- Красный фон-стрела сверху -->
+        <h1 class="game-title">WAVE CHALLENGE</h1>
+        <div class="menu-buttons">
+            <button id="btn-play" class="btn">ИГРАТЬ</button>
+            <button id="btn-quests" class="btn">ЗАДАНИЯ</button>
+            <button id="btn-profile" class="btn">ПРОФИЛЬ</button>
+        </div>
+    </div>
+
+    <!-- ОКНО С 10 ЗАДАНИЯМИ -->
+    <div id="quests-menu" class="screen hidden">
+        <button class="btn-back" id="back-from-quests">⬅ НАЗАД</button>
+        <h2>СПИСОК ЗАДАНИЙ (<span id="completed-count">0</span>/10)</h2>
+        <div class="quests-list" id="quests-container">
+            <!-- Сюда JS сам добавит 10 пунктов заданий -->
+        </div>
+    </div>
+
+    <!-- ОКНО ПРОФИЛЯ -->
+    <div id="profile-menu" class="screen hidden">
+        <!-- Блок ниже (profile-card) будет фотографироваться при шеринге -->
+        <div id="profile-card">
+            <button class="btn-back" id="back-from-profile">⬅ НАЗАД</button>
+            <h2>ПРОФИЛЬ ИГРОКА</h2>
+            <div class="profile-info">
+                <div class="name-container">
+                    <span>Имя:</span>
+                    <input type="text" id="player-name" value="Игрок" maxlength="15">
+                </div>
+                <p>Выполнено заданий: <span id="prof-quests">0/10</span></p>
+                <p>Время на сайте: <span id="prof-time">0 сек</span></p>
+                <p>Максимальный рекорд: <span id="prof-record">0</span></p>
+                <p>Всего очков: <span id="prof-total-score">0</span></p>
+            </div>
+        </div>
+        <button id="btn-share" class="btn share-btn">ПОДЕЛИТЬСЯ РЕКОРДОМ 📸</button>
+    </div>
+
+    <!-- ИГРОВОЙ ЭКРАН -->
+    <div id="game-screen" class="screen hidden">
+        <div id="game-ui">ОЧКИ: <span id="current-score">0</span></div>
+        <canvas id="gameCanvas" width="600" height="800"></canvas>
+    </div>
+
+    <!-- Модули JS, которые мы создадим позже -->
+    <script src="js/storage.js"></script>
+    <script src="js/quests.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/player.js"></script>
+    <script src="js/game.js"></script>
+</body>
+</html>
